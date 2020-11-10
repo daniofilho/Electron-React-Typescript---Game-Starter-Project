@@ -1,0 +1,69 @@
+{
+  "name": "electron-react-game",
+  "productName": "Electron React Game",
+  "version": "0.0.1",
+  "description": "Descrição",
+  "main": ".webpack/main",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint --ext .ts ."
+  },
+  "author": {
+    "name": "Dânio Filho",
+    "url": "https://github.com/daniofilho"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": "./tools/forge/forge.config.js"
+  },
+  "dependencies": {
+    "@hot-loader/react-dom": "^17.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^6.0.1",
+    "polished": "^4.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "react-router-dom": "^5.2.0",
+    "react-spinners": "^0.9.0",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.54",
+    "@electron-forge/maker-deb": "6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.54",
+    "@electron-forge/maker-zip": "6.0.0-beta.54",
+    "@electron-forge/plugin-webpack": "6.0.0-beta.54",
+    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "@types/electron-store": "^3.2.0",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/styled-components": "^5.1.4",
+    "@types/webpack-env": "^1.15.3",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "cross-env": "^7.0.2",
+    "css-loader": "^5.0.1",
+    "electron": "^10.1.5",
+    "eslint": "^7.13.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.21.5",
+    "file-loader": "^6.2.0",
+    "fork-ts-checker-webpack-plugin": "^6.0.0",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.2",
+    "node-loader": "^1.0.2",
+    "react-hot-loader": "^4.13.0",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.10",
+    "typescript": "^4.0.5",
+    "webpack": "^5.4.0"
+  }
+}
