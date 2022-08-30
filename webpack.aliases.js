@@ -3,8 +3,8 @@ const { createWebpackAliases } = require('./webpack.helpers');
 
 // Webpack aliases to resolve
 const aliases = createWebpackAliases({
-  '@src': 'src',
   '~': 'src/app',
+  '@src': 'src',
   '@static': 'src/static',
 });
 

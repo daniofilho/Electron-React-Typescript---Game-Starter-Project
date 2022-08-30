@@ -1,4 +1,6 @@
-const initial_state: SettingsType = {
+import { ISettingsProps } from './types';
+
+const initial_state: ISettingsProps = {
   locale: 'en',
 };
 

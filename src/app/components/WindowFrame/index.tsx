@@ -6,7 +6,11 @@ import { FaWindowMinimize } from 'react-icons/fa';
 
 import { Container } from './styles';
 
-const WindowFrame: React.FC = ({ children }) => {
+interface IWindowFrameProps {
+  children: React.ReactNode;
+}
+
+const WindowFrame: React.FC<IWindowFrameProps> = ({ children }) => {
   const { ipcRenderer } = window.require('electron');
 
   return (
@@ -15,9 +19,11 @@ const WindowFrame: React.FC = ({ children }) => {
         <button type="button" onClick={() => ipcRenderer.send('MINIMIZE', {})}>
           <FaWindowMinimize style={{ width: 8 }} />
         </button>
+
         <button type="button" onClick={() => ipcRenderer.send('TOGGLE_FULLSCREEN', {})}>
           <FiMaximize2 style={{ width: 10 }} />
         </button>
+
         <button type="button" onClick={() => window.close()}>
           <IoMdClose style={{ width: 11 }} />
         </button>

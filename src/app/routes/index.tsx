@@ -1,7 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-
-import AppProvider from '~/hooks';
+import { Route, Routes } from 'react-router-dom';
 
 import SplashScreen from '~/pages/SplashScreen';
 import MainMenu from '~/pages/MainMenu';
@@ -9,14 +7,14 @@ import Settings from '~/pages/Settings';
 import Game from '~/pages/Game';
 
 const Router: React.FC = () => (
-  <AppProvider>
-    <Switch>
-      <Route path="/" exact component={SplashScreen} />
-      <Route path="/main-menu" component={MainMenu} />
-      <Route path="/settings" component={Settings} />
-      <Route path="/game" component={Game} />
-    </Switch>
-  </AppProvider>
+  <Routes>
+    <Route path="/" element={<SplashScreen />} />
+    <Route path="/main_window" element={<SplashScreen />} />
+
+    <Route path="/main-menu" element={<MainMenu />} />
+    <Route path="/settings" element={<Settings />} />
+    <Route path="/game" element={<Game />} />
+  </Routes>
 );
 
 export default Router;

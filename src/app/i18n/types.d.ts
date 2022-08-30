@@ -1,6 +1,6 @@
-declare type availableLanguagesTypes = 'pt_br' | 'en';
+export type AvailableLanguagesTypes = 'pt_br' | 'en';
 
-declare type I18NStrings = {
+export interface I18NStrings {
   common: {
     play: string;
     back: string;
@@ -10,4 +10,12 @@ declare type I18NStrings = {
   settings: {
     language: string;
   };
-};
+}
+
+export interface I18NProviderProps {
+  children: React.ReactNode;
+}
+export interface I18NContextProps {
+  t: I18NStrings;
+  changeLocale(locale: availableLanguagesTypes): void;
+}

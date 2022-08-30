@@ -22,26 +22,28 @@ const ButtonDefault: React.FC<IButtonDefaultProps> = ({
   const themeProps = getTheme(theme);
 
   return (
-    <ThemeProvider theme={themeProps}>
-      <Button
-        type={type}
-        big={big}
-        size={size}
-        iconOnly={children === undefined}
-        iconPosition={iconPosition}
-        {...rest}
-      >
-        {loading ? (
-          <Loader color={themeProps.front} />
-        ) : (
-          <>
-            {iconPosition === 'left' && icon && icon}
-            {children}
-            {iconPosition === 'right' && icon && icon}
-          </>
-        )}
-      </Button>
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={themeProps}>
+        <Button
+          type={type}
+          big={big}
+          size={size}
+          iconOnly={children === undefined}
+          iconPosition={iconPosition}
+          {...rest}
+        >
+          {loading ? (
+            <Loader color={themeProps.front} />
+          ) : (
+            <>
+              {iconPosition === 'left' && icon && icon}
+              {children}
+              {iconPosition === 'right' && icon && icon}
+            </>
+          )}
+        </Button>
+      </ThemeProvider>
+    </>
   );
 };
 

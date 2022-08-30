@@ -4,14 +4,11 @@ import { getLocale } from './init';
 
 import { useSettings } from '~/hooks/useSettings';
 
-interface I18NContextData {
-  t: I18NStrings;
-  changeLocale(locale: availableLanguagesTypes): void;
-}
+import { AvailableLanguagesTypes, I18NProviderProps, I18NContextProps, I18NStrings } from './types';
 
-const I18NContext = createContext<I18NContextData>({} as I18NContextData);
+const I18NContext = createContext<I18NContextProps>({} as I18NContextProps);
 
-const I18NProvider: React.FC = ({ children }) => {
+const I18NProvider: React.FC<I18NProviderProps> = ({ children }) => {
   const {
     data: { locale },
   } = useSettings();
@@ -19,7 +16,7 @@ const I18NProvider: React.FC = ({ children }) => {
   const [t, setT] = useState<I18NStrings>(getLocale(locale));
 
   // # Change a language
-  const changeLocale = (newLocale: availableLanguagesTypes): void => {
+  const changeLocale = (newLocale: AvailableLanguagesTypes): void => {
     setT(getLocale(newLocale));
   };
 
@@ -31,7 +28,7 @@ const I18NProvider: React.FC = ({ children }) => {
   return <I18NContext.Provider value={{ t, changeLocale }}>{children}</I18NContext.Provider>;
 };
 
-const useI18N = (): I18NContextData => {
+const useI18N = (): I18NContextProps => {
   const context = useContext(I18NContext);
   if (!context) throw new Error('useI18N must be used within an I18NProvider');
   return context;

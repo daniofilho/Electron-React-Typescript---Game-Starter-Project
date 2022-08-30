@@ -1,8 +1,7 @@
-//import logo from '@static/logo.png';
 import React from 'react';
-import { hot } from 'react-hot-loader';
-import { HashRouter } from 'react-router-dom';
-
+//import { hot } from 'react-hot-loader';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppProvider from '~/hooks';
 import GlobalStyle from '~/styles/global';
 
 import WindowFrame from '~/components/WindowFrame';
@@ -18,19 +17,20 @@ interface AppState {
 }
 
 class App extends React.Component<AppProps, AppState> {
-  readonly state: AppState = { counter: 0 };
-
   render(): JSX.Element {
     return (
-      <HashRouter>
-        <WindowFrame>
-          <Routes />
-        </WindowFrame>
+      <Router>
+        <AppProvider>
+          <WindowFrame>
+            <Routes />
+          </WindowFrame>
+        </AppProvider>
 
         <GlobalStyle />
-      </HashRouter>
+      </Router>
     );
   }
 }
 
-export default hot(module)(App);
+//export default hot(module)(App);
+export default App;

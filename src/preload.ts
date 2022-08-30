@@ -1,3 +1,5 @@
+window.require = require;
+
 // Get versions
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector: string, text: string) => {

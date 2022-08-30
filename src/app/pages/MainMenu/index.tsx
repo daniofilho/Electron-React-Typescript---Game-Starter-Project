@@ -16,10 +16,11 @@ const MainMenu: React.FC = () => {
         <li>
           <Link to="/game">
             <Button theme="blue" type="button">
-              {t.common.play}
+              {t.common.play} xdsdd
             </Button>
           </Link>
         </li>
+
         <li>
           <Link to="/settings">
             <Button theme="blue" type="button">
@@ -27,6 +28,7 @@ const MainMenu: React.FC = () => {
             </Button>
           </Link>
         </li>
+
         <li>
           <Button theme="blue" type="button" onClick={() => window.close()}>
             {t.common.quit}

@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import splashscreen from '@static/images/splashscreen.png';
+import splashscreen from '@static/images/splashscreen.jpg';
 
 import { Container } from './styles';
 
 const SplashScreen: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setTimeout(() => {
-      history.push('/main-menu');
+      navigate('/main-menu');
     }, 3000);
   }, []);
 

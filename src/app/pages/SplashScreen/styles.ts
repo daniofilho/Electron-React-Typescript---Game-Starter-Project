@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import colors from '~/styles/common/colors';
-
 export const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -9,7 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: ${colors.black};
+  background: #3a4750;
   color: #fff;
 
   img {
